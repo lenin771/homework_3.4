@@ -1,16 +1,20 @@
-﻿// Задача 28: Напишите программу, которая принимает на вход число N и 
-// выдаёт произведение чисел от 1 до N.
+﻿// Задача 27: Напишите программу, которая принимает на вход число и 
+// выдаёт сумму цифр в числе.
 
-int FokCount(int number)
+int metCount(int n)
 {
-    int fok = 1;
-    for (int i = 1; i <= number; i++)
+    int sum = 0;
+    while (n > 0)
     {
-        fok = fok * i;
+        int digit = n % 10;
+        n = n / 10;
+        sum = sum + digit;
     }
-    return fok;
+    return sum;
 }
 
-Console.Write("Введите N: ");
-int number = int.Parse(Console.ReadLine()!);
-Console.WriteLine($"фоктериал числа равен {FokCount(number)}");
+Console.WriteLine("Введите число");
+int n = int.Parse(Console.ReadLine())!;
+
+Console.WriteLine($"Сумма цыфр в числе равна {metCount(n)}");
+
